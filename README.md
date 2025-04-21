@@ -43,11 +43,14 @@ While the sample initially appears as a standard (albeit shady) `.exe`, deeper f
    - Attempts to terminate the processes resulted in immediate respawn  
    - Indicates presence of **injected watchdog logic** or persistence via `services.exe`'s memory space
 
-4. **Trigger-Based Detection**  
-   - Windows Defender did not flag the sample during initial execution  
-   - Only upon **renaming** or **tracing execution behavior** did Defender detect and label it as:  
-     - `Trojan:Win32/Bearfoos.B!ml`  
-     - `Trojan:Script/Wacatac.C!ml`
+4. **Completely Undetected by Windows Defender**  
+   - At no point during execution or post-injection did Microsoft Defender detect or alert on this malware  
+   - The implant remained fully undetected while:
+     - Dropped in AppData
+     - Executed via user-level Scheduled Task
+     - Injected into `services.exe`
+     - Spawned rogue `svchost.exe` processes with outbound traffic
+   - Even with active monitoring tools running in parallel, Defender flagged **nothing** related to the CiscoSparkLauncher or its payload
 
 This behavior matches advanced APT-grade implants:
 - Use a **clean loader** to pass static scans
