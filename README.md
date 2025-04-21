@@ -17,6 +17,47 @@ In-the-wild malware sample masquerading as Cisco Webex – April 2025
 
 All files are renamed to prevent accidental execution.
 
+## 🧬 Execution Chain: From File to Fileless
+
+While the sample initially appears as a standard (albeit shady) `.exe`, deeper forensic analysis reveals a sophisticated infection chain designed to transition from a visible loader to a stealth, memory-only implant.
+
+### What we observed:
+
+1. **Initial Loader (CiscoCollabHost.exe)**  
+   - Dropped in: `AppData\Local\CiscoSparkLauncher\`  
+   - Size: ~600MB  
+   - Masquerades as Cisco Webex component  
+   - Registers a Scheduled Task under user context for persistence  
+   - Triggers no immediate AV alert
+
+2. **Payload Injection into `services.exe`**  
+   - Upon execution, the loader injects code into the trusted Windows process `services.exe`  
+   - No child processes visible  
+   - Memory threads begin spawning rogue `svchost.exe` instances under user (`snake`) rather than SYSTEM
+
+3. **Memory-Resident Behavior**  
+   - Injected processes (`svchost.exe`) had:  
+     - No command line  
+     - No file path  
+     - Outbound traffic to suspicious cloud-hosted C2s  
+   - Attempts to terminate the processes resulted in immediate respawn  
+   - Indicates presence of **injected watchdog logic** or persistence via `services.exe`'s memory space
+
+4. **Trigger-Based Detection**  
+   - Windows Defender did not flag the sample during initial execution  
+   - Only upon **renaming** or **tracing execution behavior** did Defender detect and label it as:  
+     - `Trojan:Win32/Bearfoos.B!ml`  
+     - `Trojan:Script/Wacatac.C!ml`
+
+This behavior matches advanced APT-grade implants:
+- Use a **clean loader** to pass static scans
+- Escalate to **memory-only persistence**
+- Avoid common IOCs like registry keys, startup folders, or visible file paths
+
+> In short: This thing starts as a file, lives in memory, and **doesn’t want to be found again**.
+
+🔒 If you’re seeing rogue `svchost.exe` processes under your own user — you may already be hosting a guest.
+
 ## 📦 Sample Files
 
 All renamed binaries are available directly in this repo under `artifacts/`.  
