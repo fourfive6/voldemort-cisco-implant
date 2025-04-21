@@ -17,11 +17,14 @@ In-the-wild malware sample masquerading as Cisco Webex – April 2025
 
 All files are renamed to prevent accidental execution.
 
-## 🔗 Sample Download (For Research Use Only)
+## 📦 Sample Files
 
-📦 **Download (Mega.nz)**:  
-[https://mega.nz/file/Fg5h2TbB#f07IwoptVhl2rfrRvUJ0iO5A1vqPTmg1ZhYKawOnkxU](https://mega.nz/file/Fg5h2TbB#f07IwoptVhl2rfrRvUJ0iO5A1vqPTmg1ZhYKawOnkxU)  
-🔐 **Password**: `infected`
+All renamed binaries are available directly in this repo under `artifacts/`.  
+Do NOT run these. They are for research and analysis only.
+
+- `CiscoCollabHost.exx`
+- `CiscoSparkLauncher.dl_`
+- Log files
 
 ## ⚠️ Disclaimer
 
