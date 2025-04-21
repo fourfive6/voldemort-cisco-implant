@@ -1,0 +1,37 @@
+2023-10-24T18:58:43.222Z Cisco spark launcher started, location: C:\Users\snake\AppData\Local\Programs\Cisco Spark\CiscoCollabHost.exe, launcher version: 1.0.0.2
+2023-10-24T18:58:43.222Z Found an original installation directory at: C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+*** Creating a directory with name: C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+Name: C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+Executable: [C:\Users\snake\AppData\Local\Programs\Cisco Spark\spark-windows-app.dll], Version: 42.3.0.21576
+2023-10-24T18:58:43.224Z Current dir: C:\Users\snake\AppData\Local\Programs\Cisco Spark
+*** Creating a directory with name: C:\Users\snake\AppData\Local\Programs\Cisco Spark
+Name: C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+Executable: [C:\Users\snake\AppData\Local\Programs\Cisco Spark\spark-windows-app.dll], Version: 42.3.0.21576
+2023-10-24T18:58:43.225Z The directory C:\Users\snake\AppData\Local\Programs\Cisco Spark\ is being compared to C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+2023-10-24T18:58:43.225Z Result: true
+2023-10-24T18:58:43.225Z The directory C:\Users\snake\AppData\Local\Programs\Cisco Spark\ already exists, skipping.
+
+2023-10-24T18:58:43.225Z Found 1 possible locations for Spark installations.
+
+
+2023-10-24T18:58:43.225Z Examining location C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+2023-10-24T18:58:43.225Z Location contains Spark, is intact and it's a potential candidate.
+2023-10-24T18:58:43.225Z Considering C:\Users\snake\AppData\Local\Programs\Cisco Spark\ the best candidate so far, because 42.3.0.21576 is greater than 0.0.0.0
+
+2023-10-24T18:58:43.225Z ******* ALL DIRECTORIES  ******
+
+2023-10-24T18:58:43.225Z Explicitly marked as non-removable: C:\Users\snake\AppData\Local\Programs\Cisco Spark\
+
+2023-10-24T18:58:43.225Z Marked 0 total directories for deletion.
+
+2023-10-24T18:58:43.225Z *** LAUNCHING ***
+
+2023-10-24T18:58:43.226Z User installation: true
+2023-10-24T18:58:43.226Z Attempting to launch spark executable with the following command: "C:\Users\snake\AppData\Local\Programs\Cisco Spark\CiscoCollabHost.exe" "C:\Users\snake\AppData\Local\Programs\Cisco Spark" spark-windows-app.dll /Hosted=true "C:\Users\snake\AppData\Local\Programs\Cisco Spark\CiscoCollabHost.exe" /minimized /autostartedWithWindows=true
+2023-10-24T18:58:43.226Z Folder successfully added to PATH: 
+2023-10-24T18:58:43.226Z C:\Users\snake\AppData\Local\Programs\Cisco Spark
+2023-10-24T18:58:43.258Z Managed to launch "C:\Users\snake\AppData\Local\Programs\Cisco Spark\CiscoCollabHost.exe" "C:\Users\snake\AppData\Local\Programs\Cisco Spark" spark-windows-app.dll /Hosted=true "C:\Users\snake\AppData\Local\Programs\Cisco Spark\CiscoCollabHost.exe" /minimized /autostartedWithWindows=true
+
+2023-10-24T18:58:43.258Z *** CLEANING UP *** 0 dirs
+
+2023-10-24T18:58:43.258Z Exiting launcher.
