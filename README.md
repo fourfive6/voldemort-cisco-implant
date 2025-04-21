@@ -33,7 +33,7 @@ While the sample initially appears as a standard (albeit shady) `.exe`, deeper f
 2. **Payload Injection into `services.exe`**  
    - Upon execution, the loader injects code into the trusted Windows process `services.exe`  
    - No child processes visible  
-   - Memory threads begin spawning rogue `svchost.exe` instances under user (`snake`) rather than SYSTEM
+   - Memory threads begin spawning rogue `svchost.exe` instances under user rather than SYSTEM
 
 3. **Memory-Resident Behavior**  
    - Injected processes (`svchost.exe`) had:  
@@ -69,6 +69,20 @@ Do NOT run these. They are for research and analysis only.
 - `CiscoCollabHost.exx`
 - `CiscoSparkLauncher.dl_`
 - Log files
+
+## 🧠 Vault 7 Parallels 
+
+| Capability                    | This Cisco Implant                      | Vault 7 Toolkit                              |
+|------------------------------|-----------------------------------------|---------------------------------------------|
+| **Memory-only payloads**     | ✅ Post-launch, all persistence is in RAM | ✅ `Athena`, `Leona`, `HammerDrill`         |
+| **Process injection**        | ✅ Into `services.exe`, spawns fake `svchost.exe` | ✅ Core to most Vault 7 implants     |
+| **Instant respawn**          | ✅ Watchdog-like recovery if killed      | ✅ `Leona`, `RATscreamer`                   |
+| **No file path / cmdline**   | ✅ Memory-only `svchost.exe` children    | ✅ `Athena`, `DerStarke`                   |
+| **Fake metadata & certs**    | ✅ Mimics Cisco CI environment           | ✅ `HIVE` uses forged TLS & fake certs     |
+| **Cloud C2 infrastructure**  | ✅ Suspected Cloudflare / Google Sheets  | ✅ `HIVE`, `Pandemic` over HTTPS            |
+| **Defender bypass**          | ✅ Fully undetected at all stages        | ✅ Vault 7 tools designed for AV evasion     |
+| **Modular implants**         | ✅ Evidence suggests multiple components | ✅ `Athena`, `HIVE` load payloads on-demand  |
+
 
 ## ⚠️ Disclaimer
 
