@@ -89,9 +89,7 @@ Do NOT run these. They are for research and analysis only.
 This sample is provided **strictly for research and educational purposes**.  
 Do not execute the binaries. Use in sandboxes or analysis environments only.
 
-The behavior and operational signature **strongly resembles tools disclosed in the 2017 Vault 7 leak**, associated with a certain U.S. intelligence agency known for global surveillance operations.
-
-Whether this sample is a fork, evolution, or unreported sibling remains unclear — but its stealth, impersonation, and delivery method are consistent with state-grade implants historically linked to **Langley-based interests**.
+The behavior and operational signature **strongly resembles tools disclosed in the 2017 Vault 7 leak**.
 
 ## 📩 Contact
 
