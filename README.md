@@ -4,9 +4,8 @@ First observed: April 2025
 
 ## Overview
 
-- Masquerades as:  
-  - `CiscoCollabHost.exe` (mid-stage injector)  
-  - `CiscoSparkLauncher.dll` (possibly unused decoy or placeholder)
+-Execution Vector: Legitimate Webex binary hijacked during normal execution  
+  The implant leveraged `CiscoCollabHost.exe` — a real Cisco-signed binary — to gain execution without raising alarms.
 
 - Initial Infection Vector:  
   - `ai.exe` spawned from `WINWORD.EXE` (macro-enabled document)  
@@ -59,9 +58,7 @@ All files are renamed to prevent accidental execution.
 
 #### 2. Mid-Stage Loader (`CiscoCollabHost.exe`)
 - Location:`AppData\Local\CiscoSparkLauncher\`
-- Size: ~600MB
 - Behavior:
-  - Masquerades as a Cisco Webex component
   - Was active during the svchost.exe spawning phase
   - Once killed, it did not return — not redundant
 - Assessment:
